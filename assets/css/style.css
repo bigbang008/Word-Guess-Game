@@ -1,0 +1,133 @@
+body {
+    background:goldenrod;
+    color: white;
+    height:100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.wrappper {
+    width:100%;
+    margin:0 auto;
+}
+
+canvas{
+  color: white;
+  border:  white dashed 2px;
+  padding: 15px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+	text-transform: uppercase;
+    margin:5px 0;
+    font-size: 2.6em;
+}
+
+
+p   {
+  font-size: 1.6em;
+}
+
+clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#alphabet {
+    margin:15px auto;
+    padding:0;
+    max-width:900px;
+}
+
+#alphabet li {
+    float:left;
+    margin: 0 10px 10px 0;
+    list-style:none;
+    width:35px;
+    height:30px;
+    padding-top:10px;
+    background:white;
+    color: orangered;
+    cursor:pointer;
+    border: solid 1px white;
+}
+
+clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}    
+
+#my-word {
+    margin: 0;
+    display: block;
+    padding: 0;
+    display:block;
+}
+
+#my-word li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    display: inline-block;
+    padding: 0 10px;
+    font-size:1.6em;
+}
+
+.active {
+    opacity:0.4;
+    filter:alpha(opacity=40);
+    cursor:default;
+    transition: all 0.3s ease-in-out;
+}
+
+.active:hover{
+    transition: all 0.3s ease-in-out;
+    opacity:0.4;
+    filter:alpha(opacity=40); 
+  }
+  
+
+
+#mylives{
+    font-size:1.6em;
+    text-align:center;
+    display:block;
+}
+
+button{
+  background: plum;
+  color:white;
+  border: solid 1px white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 18px 10px;
+  width: 180px;
+  margin: 10px;
+  outline: none;
+}
+
+button:hover{
+    transition: all 0.3s ease-in-out;
+    background:white;
+    border: solid 1px white;
+    color: beige;
+}
+
+canvas {
+    clear: both;
+}
+
+#catagoryName{
+    text-align: center;
+}
