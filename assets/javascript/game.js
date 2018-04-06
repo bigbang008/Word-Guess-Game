@@ -1,124 +1,124 @@
 window.onload = function () {
 
-    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
     'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z'];
     
-    var categories = 0;         // Array of topics
-    var chosenCategory = 0 ;    // Selected catagory
-    var getHint = 0 ;           // Word getHint
-    var word = 0 ;              // Selected word
-    var geuss = 0 ;             // Guess
-    var geusses = [ ];          // Stored geusses
-    var lives= 0 ;             // Lives
-    var counter = 0 ;          // Count correct geusses
-    var space = 0;            // Number of spaces in word '-'
-    var error = 0;            // Stored wrong letters
-    // Get elements
-    var showLives = document.getElementById("mylives");
-    var showCatagory = document.getElementById("scatagory");
-    var getHint = document.getElementById("hint");
-    var showClue = document.getElementById("clue");
+  var categories = 0;         // Array of topics
+  var chosenCategory = 0 ;    // Selected catagory
+  var getHint = 0 ;           // Word getHint
+  var word = 0 ;              // Selected word
+  var geuss = 0 ;             // Guess
+  var geusses = [ ];          // Stored geusses
+  var lives= 0 ;             // Lives
+  var counter = 0 ;          // Count correct geusses
+  var space = 0;            // Number of spaces in word '-'
+  var error = 0;            // Stored wrong letters
+    
+  var showLives = document.getElementById("mylives");
+  var showCatagory = document.getElementById("scatagory");
+  var getHint = document.getElementById("hint");
+  var showClue = document.getElementById("clue");
   
   
   
     // create alphabet 
-    var buttons = function () {
-      myButtons = document.getElementById('buttons');
-      letters = document.createElement('ul');
+  var buttons = function () {
+    myButtons = document.getElementById('buttons');
+    letters = document.createElement('ul');
   
-      for (var i = 0; i < alphabet.length; i++) {
-        letters.id = 'alphabet';
-        list = document.createElement('li');
-        list.id = 'letter';
-        list.innerHTML = alphabet[i];
-        check();
-        myButtons.appendChild(letters);
-        letters.appendChild(list);
-      }
+    for (var i = 0; i < alphabet.length; i++) {
+      letters.id = 'alphabet';
+      list = document.createElement('li');
+      list.id = 'letter';
+      list.innerHTML = alphabet[i];
+      check();
+      myButtons.appendChild(letters);
+      letters.appendChild(list);
     }
+  }
       
     
     // Select Catagory
-    var selectCat = function () {
-      if (chosenCategory === categories[0]) {
-        catagoryName.innerHTML = "Category: 80's ";
-      } else if (chosenCategory === categories[1]) {
-        catagoryName.innerHTML = "Category: Smash Hitz";
-      } 
-    }
+  var selectCat = function () {
+    if (chosenCategory === categories[0]) {
+      catagoryName.innerHTML = "Category: 80's ";
+    } else if (chosenCategory === categories[1]) {
+      catagoryName.innerHTML = "Category: Smash Hitz";
+    } 
+  }
   
     // Create geusses ul
-    result = function () {
-    wordHolder = document.getElementById('hold');
-    correct = document.createElement('ul');
+  result = function () {
+  wordHolder = document.getElementById('hold');
+  correct = document.createElement('ul');
   
-      for (var i = 0; i < word.length; i++) {
-        correct.setAttribute('id', 'my-word');
-        guess = document.createElement('li');
-        guess.setAttribute('class', 'guess');
-        if (word[i] === "-") {
-          guess.innerHTML = "-";
-          space = 1;
-        } else {
-          guess.innerHTML = "_";
-        }
-  
-        geusses.push(guess);
-        wordHolder.appendChild(correct);
-        correct.appendChild(guess);
+    for (var i = 0; i < word.length; i++) {
+      correct.setAttribute('id', 'my-word');
+      guess = document.createElement('li');
+      guess.setAttribute('class', 'guess');
+      if (word[i] === "-") {
+        guess.innerHTML = "-";
+        space = 1;
+      } else {
+        guess.innerHTML = "_";
       }
+  
+      geusses.push(guess);
+      wordHolder.appendChild(correct);
+      correct.appendChild(guess);
     }
+}
     
     // Show lives
-     comments = function () {
-      showLives.innerHTML = "You have " + lives + " lives";
-      if (lives < 1) {
-        showLives.innerHTML = "Game Over";
-        alert("RIP.YOU'RE DEAD NOW!~ PLEASE TRY AGAIN")
+  comments = function () {
+    showLives.innerHTML = "You have " + lives + " lives";
+    if (lives < 1) {
+      showLives.innerHTML = "Game Over";
+      alert("RIP. YOU'RE DEAD NOW!~ PLEASE TRY AGAIN")
       }
-      for (var i = 0; i < geusses.length; i++) {
-        if (counter + space === geusses.length) {
-          showLives.innerHTML = "You Win!";
-        }
+    for (var i = 0; i < geusses.length; i++) {
+      if (counter + space === geusses.length) {
+        showLives.innerHTML = "You Win!";
       }
     }
+  }
   
-        // Animate man
-    var animate = function () {
-      var drawMe = lives ;
-      drawArray[drawMe]();
-    }
+      // Animate man
+  var animate = function () {
+    var drawMe = lives ;
+    drawArray[drawMe]();
+  }
   
     
      // Hangman
-    canvas =  function(){
+  canvas =  function(){
   
-      myStickman = document.getElementById("stickman");
-      context = myStickman.getContext('2d');
-      context.beginPath();
-      context.strokeStyle = "#fff";
-      context.lineWidth = 2;
-    };
+    myStickman = document.getElementById("stickman");
+    context = myStickman.getContext('2d');
+    context.beginPath();
+    context.strokeStyle = "#fff";
+    context.lineWidth = 2;
+  };
     
-      head = function(){
-        myStickman = document.getElementById("stickman");
-        context = myStickman.getContext('2d');
-        context.beginPath();
-        context.arc(60, 25, 10, 0, Math.PI*2, true);
-        context.stroke();
-      }
+  head = function(){
+    myStickman = document.getElementById("stickman");
+    context = myStickman.getContext('2d');
+    context.beginPath();
+    context.arc(60, 25, 10, 0, Math.PI*2, true);
+    context.stroke();
+  }
       
-    draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
+  draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
       
-      context.moveTo($pathFromx, $pathFromy);
-      context.lineTo($pathTox, $pathToy);
-      context.stroke(); 
+    context.moveTo($pathFromx, $pathFromy);
+    context.lineTo($pathTox, $pathToy);
+    context.stroke(); 
   }
   
-     frame1 = function() {
-       draw (0, 150, 150, 150);
-     };
+    frame1 = function() {
+      draw (0, 150, 150, 150);
+    };
      
      frame2 = function() {
        draw (10, 0, 10, 600);
@@ -152,22 +152,22 @@ window.onload = function () {
        draw (60, 70, 20, 100);
      };
     
-    drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1]; 
+  drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1]; 
   
   
     // OnClick Function
-     check = function () {
-      list.onclick = function () {
-        var geuss = (this.innerHTML);
-        this.setAttribute("class", "active");
-        this.onclick = null;
-        for (var i = 0; i < word.length; i++) {
-          if (word[i] === geuss) {
-            geusses[i].innerHTML = geuss;
-            counter += 1;
-          } 
-        }
-        var j = (word.indexOf(geuss));
+  check = function () {
+    list.onclick = function () {
+      var geuss = (this.innerHTML);
+      this.setAttribute("class", "active");
+      this.onclick = null;
+      for (var i = 0; i < word.length; i++) {
+        if (word[i] === geuss) {
+          geusses[i].innerHTML = geuss;
+          counter += 1;
+        } 
+      }
+      var j = (word.indexOf(geuss));
         if (j === -1) {
           lives -= 1;
           comments();
@@ -179,8 +179,8 @@ window.onload = function () {
         } else {
           comments();
         }
-      }
     }
+  }
     
       
     // Play
