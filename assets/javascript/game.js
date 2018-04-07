@@ -4,16 +4,16 @@ window.onload = function () {
     'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-  var categories = 0;         
-  var chosenCategory = 0;    
-  var getHint = 0;          
-  var word = 0;              
-  var geuss = 0;             
-  var geusses = [];          
-  var lives = 0;             
-  var counter = 0;          
-  var space = 0;            
-  var error = 0;            
+  var categories = 0;
+  var chosenCategory = 0;
+  var getHint = 0;
+  var word = 0;
+  var geuss = 0;
+  var geusses = [];
+  var lives = 0;
+  var counter = 0;
+  var space = 0;
+  var error = 0;
 
   var showLives = document.getElementById("mylives");
   var showCatagory = document.getElementById("scatagory");
@@ -148,10 +148,10 @@ window.onload = function () {
 
   // Animate man
   var animate = function () {
-    var drawMe = lives;      
+    var drawMe = lives;
     drawArray[drawMe]();
   }
-  
+
 
   // OnClick Function
   check = function () {
