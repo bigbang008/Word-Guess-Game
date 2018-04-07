@@ -25,11 +25,11 @@ canvas{
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
     font-weight: 100;
 	text-transform: uppercase;
     margin:5px 0;
-    font-size: 2.6em;
+    font-size: 60px;
+    color: crimson;
 }
 
 
@@ -56,7 +56,7 @@ clear:after {
     width:35px;
     height:30px;
     padding-top:10px;
-    background:white;
+    background:lightskyblue;
     color: orangered;
     cursor:pointer;
     border: solid 1px white;
@@ -72,7 +72,6 @@ clear:after {
     margin: 0;
     display: block;
     padding: 0;
-    display:block;
 }
 
 #my-word li {
@@ -96,13 +95,16 @@ clear:after {
     opacity:0.4;
     filter:alpha(opacity=40); 
   }
-  
 
+#guesswrong {
+    color: darkred;
+}
 
-#mylives{
+#mylives { 
     font-size:1.6em;
     text-align:center;
     display:block;
+    color: darkgoldenrod;
 }
 
 button{
@@ -132,3 +134,4 @@ canvas {
 #catagoryName{
     text-align: center;
 }
+
