@@ -75,7 +75,7 @@ window.onload = function () {
       showLives.innerHTML = "Game Over";
       alert("RIP. YOU'RE DEAD NOW!~ PLEASE TRY AGAIN")
     }
-    
+
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "You Win!";
@@ -150,7 +150,7 @@ window.onload = function () {
   var animate = function () {
     var drawMe = lives;      
     drawArray[drawMe]();
-    }
+  }
   
 
   // OnClick Function
